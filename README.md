@@ -5,19 +5,22 @@
 ### 让公众号文章从 Markdown 到可粘贴排版，只经过一个实时预览页
 
 <p>
+  <a href="https://kianzzz.github.io/zhouxing-paiban-wx/"><img src="https://img.shields.io/badge/在线体验-打开预览页-07C160?style=flat-square" alt="在线体验"></a>
   <img src="https://img.shields.io/badge/Codex-Skill-171817?style=flat-square" alt="Codex Skill">
   <img src="https://img.shields.io/badge/内置主题-5套-01A539?style=flat-square" alt="5 套内置主题">
   <img src="https://img.shields.io/badge/可调组件-13类-7559A6?style=flat-square" alt="13 类可调组件">
   <img src="https://img.shields.io/badge/微信粘贴-兼容优化-1677FF?style=flat-square" alt="微信粘贴兼容优化">
 </p>
 
-[功能概览](#功能概览) · [快速开始](#快速开始) · [操作界面](#操作界面) · [主题预览](#主题预览) · [兼容说明](#兼容说明)
+[在线体验](https://kianzzz.github.io/zhouxing-paiban-wx/) · [功能概览](#功能概览) · [快速开始](#快速开始) · [操作界面](#操作界面) · [主题预览](#主题预览) · [兼容说明](#兼容说明)
 
 </div>
 
 <img src="docs/images/ui-overview.png" width="100%" alt="Zhouxing Paiban WX 完整操作界面">
 
 > 输入一篇 Markdown 或已经写好的文章，Skill 会生成可编辑的本地排版页。你可以实时换主题、换组件、调字体和间距，确认后复制富文本，直接粘贴到公众号编辑器。
+
+不安装 Skill 也可以直接打开 **[在线预览页](https://kianzzz.github.io/zhouxing-paiban-wx/)**，在示例文章上体验完整的排版设置和复制流程。
 
 ## 功能概览
 
