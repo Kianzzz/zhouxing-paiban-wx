@@ -1,0 +1,26 @@
+{
+  "id": "ink-blue-editorial",
+  "name": "墨蓝刊读",
+  "description": "墨蓝刊读：衬线正文、通栏深色章节、居中引语与影印图片",
+  "order": 2,
+  "default": false,
+  "accent": "#315B7D",
+  "hue_range": 70,
+  "heading_label": "EDITION",
+  "h1_watermark": null,
+  "h1_kicker": null,
+  "css": ".note-to-mp {\n  max-width:677px;margin:0 auto;padding:0 12px 40px;background:#FFFFFF;color:#263746;\n  font-family:'Songti SC',STSong,SimSun,serif;font-size:16px;line-height:1.86!important;overflow-x:hidden;word-break:break-word;\n  \n}\n.note-to-mp p {color:#263746;margin:0 0 20px!important;font-size:16px;line-height:1.82!important;letter-spacing:.02em;text-align:left!important;}\n.note-to-mp h1 {margin:0 0 46px;font-size:24px;font-weight:700;line-height:1.35!important;padding:12px 18px;border:none;border-top:8px solid #315B7D;border-bottom:1px solid #7895AB;border-radius:0;background:#F2F6F9;color:#132D41;box-shadow:none;text-align:center;letter-spacing:.06em;}\n.note-to-mp h2 {margin:62px 0 28px!important;font-size:22px;font-weight:700;line-height:1.45!important;padding:18px 20px;border:none;border-radius:0;background:#183247;color:#FFFFFF;box-shadow:8px 8px 0 #DCE7EE;}\n.note-to-mp .wechatpb-heading-label {font-size:10px;font-weight:650;line-height:1.2!important;letter-spacing:2px;display:block;margin:0 0 8px;padding:0;background:transparent;color:#AFC3D2;font-family:Georgia,serif;letter-spacing:4px;}\n.note-to-mp h3 {margin:38px 0 18px!important;font-size:18px;font-weight:700;line-height:1.5!important;padding:0 0 9px;border:none;border-bottom:1px solid #7895AB;background:transparent;color:#183247;letter-spacing:.08em;}\n.note-to-mp h4,.note-to-mp h5,.note-to-mp h6 {margin:28px 0 15px!important;color:#263746;font-size:16px;font-weight:650;line-height:1.5!important;}\n.note-to-mp strong {padding:0 2px;font-weight:700;padding:0 2px;background:linear-gradient(transparent 68%,#DCE7EE 68%);color:#183247;}\n.note-to-mp em {color:#315B7D;font-style:italic;}\n.note-to-mp a {color:#315B7D;text-decoration:none;border-bottom:1px solid #315B7D;}\n.note-to-mp blockquote {margin:0 0 26px!important;padding:14px 20px;border:none;border-top:1px solid #7895AB;border-bottom:1px solid #7895AB;border-radius:0;background:#FFFFFF;color:#294C67;box-shadow:none;text-align:center;font-size:18px;}\n.note-to-mp blockquote p {margin:0!important;color:inherit!important;font-size:15px;line-height:1.78!important;text-align:inherit!important;}\n.note-to-mp ul,.note-to-mp ol {margin:0 0 24px;line-height:1.82!important;padding:18px 24px 18px 42px;background:#F2F6F9;color:#294C67;}\n.note-to-mp li {margin:8px 0;padding-left:5px;}\n.note-to-mp li::marker {color:#315B7D;font-weight:700;}\n.note-to-mp code {padding:2px 6px;border:1px solid #E2E8F0;border-radius:4px;background:#F1F5F9;color:#334155;font-family:Menlo,Monaco,Consolas,monospace;font-size:14px;}\n.note-to-mp .code-section {margin:0 0 26px;overflow:hidden;padding:0;border:none;border-radius:0;background:#102433;box-shadow:8px 8px 0 #DCE7EE;}\n.note-to-mp .code-section pre {margin:0;max-height:360px;padding:17px;overflow:auto;background:transparent;white-space:pre-wrap!important;word-break:break-all!important;}\n.note-to-mp .code-section code {display:block;padding:0;border:none;background:transparent;color:#DDEBF3;line-height:1.65!important;}\n.note-to-mp img {width:auto;max-width:100%;height:auto;display:block;margin:28px auto;box-sizing:border-box;border:9px solid #FFFFFF;border-radius:0;box-shadow:0 0 0 1px #AFC3D2,0 16px 32px rgba(24,50,71,.16);}\n.note-to-mp hr {height:1px;margin:48px 0 32px;border:none;height:5px;border-top:1px solid #315B7D;border-bottom:1px solid #315B7D;background:transparent;}\n.note-to-mp table {width:100%;margin:0 0 26px;box-sizing:border-box;table-layout:fixed;font-size:14px;border-collapse:collapse;border:1px solid #7895AB;}\n.note-to-mp th {box-sizing:border-box;padding:10px 12px;vertical-align:middle;text-align:left;white-space:normal;word-break:break-word;overflow-wrap:anywhere;background:#183247;color:#FFFFFF;border:1px solid #7895AB;}\n.note-to-mp td {box-sizing:border-box;padding:10px 12px;vertical-align:middle;text-align:left;white-space:normal;word-break:break-word;overflow-wrap:anywhere;color:#263746;background:#FFFFFF;border:1px solid #AFC3D2;}\n",
+  "evidence": {
+    "source_type": "mixed",
+    "source": "Original Zhouxing design; component-system research from isjiamu/gzh-design-skill",
+    "source_commit": "ba1f4175519b481cb3566616c9e5178705067904",
+    "observed": [
+      "semantic component grouping",
+      "restrained color roles",
+      "inline-style compatibility strategy"
+    ],
+    "inferred": [],
+    "unobserved": [],
+    "confidence": "high"
+  }
+}

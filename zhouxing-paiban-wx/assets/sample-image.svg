@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640">
+  <rect width="1200" height="640" fill="#f4f8f5"/>
+  <rect x="78" y="72" width="1044" height="496" rx="28" fill="#ffffff" stroke="#dce9e0" stroke-width="4"/>
+  <circle cx="205" cy="228" r="74" fill="#2f8f5b" opacity="0.16"/>
+  <circle cx="205" cy="228" r="42" fill="#2f8f5b"/>
+  <rect x="325" y="170" width="610" height="34" rx="17" fill="#2f8f5b"/>
+  <rect x="325" y="232" width="760" height="22" rx="11" fill="#c9dbcf"/>
+  <rect x="325" y="274" width="660" height="22" rx="11" fill="#dce9e0"/>
+  <rect x="118" y="386" width="964" height="118" rx="18" fill="#edf5ef"/>
+  <text x="600" y="456" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="34" fill="#286f49">公众号正文配图样式预览</text>
+</svg>

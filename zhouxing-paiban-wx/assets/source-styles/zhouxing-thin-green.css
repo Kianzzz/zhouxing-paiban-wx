@@ -1,0 +1,446 @@
+/* Zhouxing #01a539 Prompt Workflow
+  核心气质：纯绿色块 + 白色圆角叠卡，简洁、高级、克制。
+  Canonical source: ZhouxingOS / Zhouxing·细绿白.md
+  Intentional adaptations: numbered TITEL labels, reference-image H1, and the user-approved dialogue quote card.
+*/
+
+.note-to-mp {
+  max-width: 677px;
+  margin: 0 auto;
+  padding: 0 13px 28px;
+  background: #ffffff !important;
+  color: #334155 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.78 !important;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  overflow-x: hidden;
+  word-break: break-word;
+}
+
+.note-to-mp p {
+  margin: 0 0 22px !important;
+  color: #334155 !important;
+  font-size: 16px;
+  line-height: 1.9 !important;
+  text-align: justify !important;
+}
+
+.note-to-mp strong {
+  color: #111827 !important;
+  font-weight: 500;
+  background: linear-gradient(transparent 60%, rgba(1, 165, 57, 0.24) 60%);
+  padding: 0 2px;
+}
+
+.note-to-mp em {
+  color: #01a539 !important;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.note-to-mp h1 {
+  margin: 0 0 36px;
+  padding: 2px 0 20px;
+  border: none;
+  border-bottom: 1px solid #01a539;
+  border-radius: 0;
+  background: #ffffff !important;
+  color: #111827 !important;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4 !important;
+  letter-spacing: 0;
+}
+
+.note-to-mp h1 .wechatpb-h1-watermark {
+  display: block;
+  margin: 0;
+  color: #01a539;
+  opacity: 0.14;
+  font-family: Arial, sans-serif;
+  font-size: 58px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 0.9 !important;
+}
+
+.note-to-mp h1 .wechatpb-h1-kicker {
+  display: block;
+  margin: 3px 0 18px;
+  color: #01a539;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  line-height: 1.25 !important;
+}
+
+.note-to-mp h2 {
+  margin: 50px 0 30px !important;
+  padding: 0;
+  position: relative;
+  color: #015f25 !important;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35 !important;
+}
+
+.note-to-mp h2::before {
+  content: none;
+  display: none;
+}
+
+.note-to-mp h2 .wechatpb-heading-label {
+  display: block;
+  margin: 0 0 5px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: #01a539;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  line-height: 1.2 !important;
+}
+
+.note-to-mp h2::after {
+  content: "";
+  display: none;
+}
+
+.note-to-mp h3 {
+  margin: 32px 0 20px !important;
+  color: #015f25 !important;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.45 !important;
+}
+
+.note-to-mp h4,
+.note-to-mp h5,
+.note-to-mp h6 {
+  margin: 28px 0 16px !important;
+  color: #015f25 !important;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5 !important;
+}
+
+.note-to-mp blockquote {
+  margin: 0 0 26px !important;
+  padding: 18px 20px;
+  border: 1px solid #c8f0d2;
+  border-radius: 18px 18px 18px 4px;
+  background: #ffffff !important;
+  box-shadow: rgba(1, 165, 57, 0.07) 0 3px 8px;
+}
+
+.note-to-mp blockquote p {
+  margin: 0 !important;
+  color: #3f5848 !important;
+  font-size: 15px;
+  line-height: 1.8 !important;
+}
+
+.note-to-mp ul,
+.note-to-mp ol {
+  margin: 0 0 24px;
+  padding-left: 24px;
+  color: #475569 !important;
+  font-size: 16px;
+  line-height: 1.85 !important;
+}
+
+.note-to-mp li {
+  margin: 6px 0;
+}
+
+.note-to-mp li::marker {
+  color: #01a539;
+  font-weight: 400;
+}
+
+.note-to-mp code {
+  color: #015f25 !important;
+  background: #f1f5f9 !important;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-family: Menlo, Monaco, Consolas, monospace;
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+.note-to-mp .code-section {
+  margin: 0 0 18px;
+  padding: 0;
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0;
+  border-top: 3px solid rgba(1, 165, 57, 0.24);
+  border-radius: 10px;
+  box-shadow: rgba(15, 23, 42, 0.04) 0 4px 14px;
+  overflow: hidden;
+}
+
+.note-to-mp .code-section pre {
+  margin: 0;
+  max-height: 320px;
+  padding: 16px;
+  background: transparent !important;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #94a3b8 #f1f5f9;
+  scrollbar-width: thin;
+  white-space: pre-wrap !important;
+  word-break: break-all !important;
+}
+
+.note-to-mp .code-section code {
+  display: block;
+  padding: 0;
+  border: none;
+  background: transparent !important;
+  color: #334155 !important;
+}
+
+.note-to-mp img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+  border-radius: 12px;
+}
+
+.note-to-mp hr {
+  height: 1px;
+  border: none;
+  margin: 50px 0 32px;
+  background: linear-gradient(to right, transparent, #c8f0d2, transparent);
+}
+
+.note-to-mp table {
+  width: 100%;
+  margin: 0 0 26px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 1px solid #c8f0d2;
+  background: #ffffff;
+  font-size: 14px;
+}
+
+.note-to-mp th,
+.note-to-mp td {
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #c8f0d2;
+  vertical-align: middle;
+  text-align: left;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.note-to-mp th {
+  background: #f2fff5;
+  color: #015f25;
+  font-weight: 600;
+}
+
+.note-to-mp td {
+  background: #ffffff;
+  color: #334155;
+}
+
+.note-to-mp .prompt-cover {
+  margin: 0;
+  padding: 28px 24px 48px;
+  border: none;
+  border-radius: 20px 20px 0 0;
+  background: #01a539 !important;
+  color: #ffffff !important;
+  box-shadow: none;
+}
+
+.note-to-mp .prompt-cover .eyebrow {
+  margin: 0 0 22px !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  line-height: 1.2 !important;
+}
+
+.note-to-mp .prompt-cover .title {
+  max-width: 520px;
+  margin: 0 0 10px !important;
+  color: #ffffff !important;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.4 !important;
+  letter-spacing: 0;
+  text-align: left !important;
+}
+
+.note-to-mp .prompt-cover .subtitle {
+  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.86) !important;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55 !important;
+  text-align: left !important;
+}
+
+.note-to-mp .prompt-intro {
+  margin: -28px 12px 36px;
+  padding: 24px 22px 22px;
+  border: 1px solid #c8f0d2;
+  border-radius: 16px;
+  background: #ffffff !important;
+  box-shadow: rgba(1, 165, 57, 0.12) 0 12px 34px -14px;
+}
+
+.note-to-mp .prompt-intro .quote {
+  margin: 0 0 20px !important;
+  color: #64748b !important;
+  font-size: 16px;
+  line-height: 1.7 !important;
+  text-align: left !important;
+}
+
+.note-to-mp .prompt-intro .quote strong {
+  color: #111827 !important;
+  background: linear-gradient(transparent 60%, rgba(1, 165, 57, 0.24) 60%);
+}
+
+.note-to-mp .author-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid #d8f4df;
+}
+
+.note-to-mp .avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border: 3px solid #c8f0d2;
+  border-radius: 50%;
+  background: #f2fff5 !important;
+  color: #01a539 !important;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.note-to-mp .author-meta {
+  color: #6f8b7a !important;
+  font-size: 15px;
+  line-height: 1.45 !important;
+}
+
+.note-to-mp .author-meta strong {
+  background: none;
+  color: #015f25 !important;
+  padding: 0;
+  text-decoration: none;
+}
+
+.note-to-mp .badge {
+  display: inline-block;
+  margin-left: auto;
+  padding: 8px 18px;
+  border-radius: 6px;
+  background: #e9faee !important;
+  color: #01a539 !important;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.note-to-mp .case-heading {
+  margin: 50px 0 32px;
+  padding: 0 13px;
+}
+
+.note-to-mp .case-heading .number {
+  color: #e2f9e8 !important;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.note-to-mp .case-heading .eyebrow {
+  margin: -40px 0 5px 8px;
+  color: #01a539 !important;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+.note-to-mp .case-heading .title {
+  margin: 0 0 0 8px;
+  color: #015f25 !important;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.note-to-mp .note-card {
+  margin: 0 0 26px;
+  padding: 17px 18px;
+  border: 1px solid #c8f0d2;
+  border-left: 4px solid #01a539;
+  border-radius: 0 10px 10px 0;
+  background: #f2fff5 !important;
+}
+
+.note-to-mp .note-card p {
+  margin: 0 !important;
+  color: #475569 !important;
+  font-size: 15px;
+  line-height: 1.75 !important;
+}
+
+.note-to-mp .footer-text {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid #d8f4df;
+  color: #6f8b7a !important;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 560px) {
+  .note-to-mp {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .note-to-mp .prompt-cover {
+    padding: 28px 20px 50px;
+  }
+
+  .note-to-mp .prompt-cover .title {
+    font-size: 25px;
+  }
+
+  .note-to-mp .prompt-intro {
+    margin-left: 6px;
+    margin-right: 6px;
+    padding: 20px 16px;
+  }
+
+  .note-to-mp .badge {
+    padding: 7px 11px;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+}

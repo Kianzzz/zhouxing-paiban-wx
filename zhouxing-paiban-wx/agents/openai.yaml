@@ -1,0 +1,7 @@
+interface:
+  display_name: "Zhouxing Paiban WX"
+  short_description: "公众号文章实时排版、联动换色、富文本复制与风格学习入库"
+  brand_color: "#01A539"
+  default_prompt: "Use $zhouxing-paiban-wx to format this article and open an editable WeChat preview."
+policy:
+  allow_implicit_invocation: true

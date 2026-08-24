@@ -1,0 +1,496 @@
+{
+  "version": 3,
+  "research": {
+    "source": "https://github.com/isjiamu/gzh-design-skill",
+    "source_commit": "ba1f4175519b481cb3566616c9e5178705067904",
+    "borrowed_methods": [
+      "semantic component families",
+      "multiple variants per content role",
+      "theme color roles",
+      "paste-safe static CSS"
+    ],
+    "not_copied": [
+      "theme names",
+      "component markup",
+      "CSS declarations",
+      "complete visual structures"
+    ]
+  },
+  "modules": {
+    "h1": {
+      "label": "H1 主标题",
+      "options": [
+        {
+          "id": "theme",
+          "label": "跟随主题",
+          "css": ""
+        },
+        {
+          "id": "editorial",
+          "label": "刊头双线",
+          "css": ".note-to-mp h1{padding:14px 8px!important;border:none!important;border-top:5px solid {{accent}}!important;border-bottom:1px solid {{soft}}!important;border-radius:0!important;background:#fff!important;color:{{dark}}!important;box-shadow:none!important;}"
+        },
+        {
+          "id": "center-rule",
+          "label": "居中细线",
+          "css": ".note-to-mp h1{padding:12px 8px!important;border:none!important;border-top:1px solid {{accent}}!important;border-bottom:1px solid {{accent}}!important;border-radius:0!important;background:#fff!important;color:{{dark}}!important;box-shadow:none!important;text-align:center!important;}"
+        },
+        {
+          "id": "dark-cover",
+          "label": "深色封面",
+          "css": ".note-to-mp h1{padding:15px 24px!important;border:none!important;border-radius:16px!important;background:{{dark}}!important;color:#fff!important;box-shadow:0 14px 32px {{shadow}}!important;text-align:left!important;}"
+        },
+        {
+          "id": "ticket-cover",
+          "label": "票据刊头",
+          "css": ".note-to-mp h1{padding:13px 22px!important;border:1px dashed {{accent}}!important;border-radius:4px!important;background:{{pale}}!important;color:{{dark}}!important;box-shadow:7px 7px 0 {{soft}}!important;text-align:left!important;}"
+        },
+        {
+          "id": "serif-opening",
+          "label": "衬线开篇",
+          "css": ".note-to-mp h1{padding:15px 12px!important;border:none!important;border-bottom:4px double {{accent}}!important;border-radius:0!important;background:#fff!important;color:{{dark}}!important;box-shadow:none!important;font-family:'Songti SC',STSong,serif!important;text-align:center!important;}"
+        }
+      ]
+    },
+    "h2": {
+      "label": "H2 章节标题",
+      "options": [
+        {
+          "id": "theme",
+          "label": "跟随主题",
+          "css": ""
+        },
+        {
+          "id": "bottom-rule",
+          "label": "编号底线",
+          "css": ".note-to-mp h2{padding:3px 0 10px!important;border:none!important;border-bottom:2px solid {{soft}}!important;border-radius:0!important;background:transparent!important;color:{{dark}}!important;box-shadow:none!important;}.note-to-mp h2::before{content:'SECTION TITLE';display:block!important;margin:0 0 3px!important;color:{{accent}}!important;font-size:9px!important;font-weight:650!important;line-height:1.2!important;letter-spacing:2px!important;}.note-to-mp h2 .wechatpb-heading-label{display:inline-block!important;margin:0 9px 0 0!important;padding:2px 7px!important;border-radius:3px!important;background:{{accent}}!important;color:#fff!important;}"
+        },
+        {
+          "id": "outline-tab",
+          "label": "描边页签",
+          "css": ".note-to-mp h2{padding:0 0 8px!important;border:none!important;border-radius:0!important;background:#fff!important;color:{{dark}}!important;}.note-to-mp h2 .wechatpb-heading-label{display:inline-block!important;margin:0 9px 0 0!important;padding:2px 7px!important;border:1px solid {{accent}}!important;border-radius:3px!important;background:#fff!important;color:{{accent}}!important;}.note-to-mp h2::after{content:'';display:block!important;width:88px!important;height:2px!important;margin:7px 0 0!important;background:{{accent}}!important;}"
+        },
+        {
+          "id": "watermark",
+          "label": "水印编号",
+          "css": ".note-to-mp h2{padding:0 0 13px!important;border:none!important;border-bottom:1px solid {{soft}}!important;border-radius:0!important;background:#fff!important;color:{{dark}}!important;}.note-to-mp h2 .wechatpb-heading-label{display:block!important;margin:0 0 -5px!important;padding:0!important;background:transparent!important;color:{{soft}}!important;font-size:34px!important;font-family:Georgia,serif!important;letter-spacing:0!important;line-height:1!important;}"
+        },
+        {
+          "id": "centered-editorial",
+          "label": "居中栏目",
+          "css": ".note-to-mp h2{padding:10px 8px!important;border:none!important;border-top:1px solid {{soft}}!important;border-bottom:1px solid {{soft}}!important;border-radius:0!important;background:#fff!important;color:{{dark}}!important;text-align:center!important;}.note-to-mp h2 .wechatpb-heading-label{display:block!important;margin:0 0 5px!important;padding:0!important;background:transparent!important;color:{{accent}}!important;letter-spacing:3px!important;}"
+        },
+        {
+          "id": "chapter-shortline",
+          "label": "章节短线",
+          "css": ".note-to-mp h2{padding:0 0 17px!important;border:none!important;border-radius:0!important;background:#fff!important;color:{{dark}}!important;box-shadow:none!important;font-family:'Songti SC',STSong,serif!important;text-align:left!important;}.note-to-mp h2 .wechatpb-heading-label{display:block!important;margin:0 0 8px!important;padding:0!important;background:transparent!important;color:{{accent}}!important;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif!important;font-size:10px!important;font-weight:700!important;letter-spacing:4px!important;}.note-to-mp h2::after{content:'';display:block!important;width:76px!important;height:3px!important;margin:15px 0 0!important;background:{{accent}}!important;}"
+        }
+      ]
+    },
+    "h3": {
+      "label": "H3 小标题",
+      "options": [
+        {
+          "id": "theme",
+          "label": "跟随主题",
+          "css": ""
+        },
+        {
+          "id": "pale-pill",
+          "label": "浅色胶囊",
+          "css": ".note-to-mp h3{display:table!important;padding:8px 14px!important;border:none!important;border-radius:999px!important;background:{{pale}}!important;color:{{dark}}!important;}"
+        },
+        {
+          "id": "marker-line",
+          "label": "荧光底线",
+          "css": ".note-to-mp h3{display:table!important;padding:0 2px 3px!important;border:none!important;border-radius:0!important;background:linear-gradient(transparent 48%,{{soft}} 48% 88%,transparent 88%)!important;color:{{dark}}!important;}"
+        },
+        {
+          "id": "quiet-box",
+          "label": "轻量方框",
+          "css": ".note-to-mp h3{padding:9px 12px!important;border:1px solid {{soft}}!important;border-radius:4px!important;background:#fff!important;color:{{dark}}!important;}"
+        },
+        {
+          "id": "dark-pill",
+          "label": "深色标签",
+          "css": ".note-to-mp h3{display:table!important;padding:7px 13px!important;border:none!important;border-radius:6px!important;background:{{dark}}!important;color:#fff!important;box-shadow:4px 4px 0 {{soft}}!important;}"
+        },
+        {
+          "id": "ticket-label",
+          "label": "票据标签",
+          "css": ".note-to-mp h3{display:table!important;padding:8px 12px!important;border:1px dashed {{accent}}!important;border-radius:2px!important;background:{{pale}}!important;color:{{dark}}!important;}"
+        },
+        {
+          "id": "dot-pill",
+          "label": "圆点胶囊",
+          "css": ".note-to-mp h3{display:table!important;padding:8px 16px 8px 14px!important;border:1px solid {{soft}}!important;border-radius:999px!important;background:{{pale}}!important;color:{{dark}}!important;box-shadow:0 1px 3px {{shadow}}!important;}.note-to-mp h3::before{content:'';display:inline-block!important;width:8px!important;height:8px!important;margin:0 11px 1px 0!important;border-radius:50%!important;background:{{accent}}!important;}"
+        }
+      ]
+    },
+    "quote": {
+      "label": "引用块",
+      "options": [
+        {
+          "id": "theme",
+          "label": "跟随主题",
+          "css": ""
+        },
+        {
+          "id": "soft-card",
+          "label": "浅色卡片",
+          "css": ".note-to-mp blockquote{padding:20px!important;border:1px solid {{soft}}!important;border-radius:14px!important;background:{{pale}}!important;box-shadow:0 9px 24px {{shadow}}!important;text-align:left!important;}"
+        },
+        {
+          "id": "centered-rule",
+          "label": "居中金句",
+          "css": ".note-to-mp blockquote{padding:14px 16px!important;border:none!important;border-top:1px solid {{accent}}!important;border-bottom:1px solid {{accent}}!important;border-radius:0!important;background:#fff!important;box-shadow:none!important;text-align:center!important;}.note-to-mp blockquote p{text-align:center!important;font-family:'Songti SC',STSong,serif!important;}"
+        },
+        {
+          "id": "corner-note",
+          "label": "折角便签",
+          "css": ".note-to-mp blockquote{padding:20px 22px!important;border:1px solid {{soft}}!important;border-radius:3px 15px 3px 15px!important;background:#fff!important;box-shadow:6px 6px 0 {{pale}}!important;text-align:left!important;}"
+        },
+        {
+          "id": "side-accent",
+          "label": "侧边强调",
+          "css": ".note-to-mp blockquote{padding:18px 20px!important;border:none!important;border-left:4px solid {{accent}}!important;border-radius:0 10px 10px 0!important;background:{{pale}}!important;box-shadow:none!important;text-align:left!important;}"
+        },
+        {
+          "id": "dark-summary",
+          "label": "深色摘要",
+          "css": ".note-to-mp blockquote{padding:22px!important;border:none!important;border-radius:12px!important;background:{{dark}}!important;color:#fff!important;box-shadow:0 12px 28px {{shadow}}!important;text-align:left!important;}.note-to-mp blockquote p{color:#fff!important;}"
+        },
+        {
+          "id": "ticket-note",
+          "label": "票据摘录",
+          "css": ".note-to-mp blockquote{padding:21px!important;border:1px dashed {{accent}}!important;border-radius:3px!important;background:{{pale}}!important;color:{{dark}}!important;box-shadow:6px 6px 0 {{soft}}!important;text-align:left!important;}"
+        },
+        {
+          "id": "serif-pullquote",
+          "label": "衬线大引语",
+          "css": ".note-to-mp blockquote{padding:16px 18px!important;border:none!important;border-top:4px double {{accent}}!important;border-bottom:4px double {{accent}}!important;border-radius:0!important;background:#fff!important;color:{{dark}}!important;box-shadow:none!important;text-align:center!important;}.note-to-mp blockquote p{font-family:'Songti SC',STSong,serif!important;font-size:18px!important;line-height:1.8!important;text-align:center!important;}"
+        },
+        {
+          "id": "speech-card",
+          "label": "对话卡片",
+          "css": ".note-to-mp blockquote{padding:20px 22px!important;border:1px solid {{soft}}!important;border-radius:18px 18px 18px 4px!important;background:#fff!important;color:{{dark}}!important;box-shadow:0 3px 8px {{shadow}}!important;text-align:left!important;}"
+        }
+      ]
+    },
+    "code": {
+      "label": "代码块",
+      "options": [
+        {
+          "id": "theme",
+          "label": "跟随主题",
+          "css": ""
+        },
+        {
+          "id": "dark-window",
+          "label": "深色窗口",
+          "css": ".note-to-mp .code-section{padding:0!important;border:1px solid {{dark}}!important;border-top:5px solid {{accent}}!important;border-radius:10px!important;background:#111827!important;box-shadow:0 12px 28px rgba(15,23,42,.16)!important;}.note-to-mp .code-section code{color:#E5E7EB!important;background:transparent!important;}"
+        },
+        {
+          "id": "light-paper",
+          "label": "浅色纸张",
+          "css": ".note-to-mp .code-section{padding:0!important;border:1px solid {{soft}}!important;border-radius:8px!important;background:#F8FAFC!important;box-shadow:none!important;}.note-to-mp .code-section code{color:#334155!important;background:transparent!important;}"
+        },
+        {
+          "id": "hard-shadow",
+          "label": "硬边阴影",
+          "css": ".note-to-mp .code-section{padding:0!important;border:1px solid {{accent}}!important;border-radius:3px!important;background:#fff!important;box-shadow:7px 7px 0 {{soft}}!important;}.note-to-mp .code-section code{color:{{dark}}!important;background:transparent!important;}"
+        },
+        {
+          "id": "terminal-dots",
+          "label": "终端窗口",
+          "css": ".note-to-mp .code-section{padding:0!important;border:1px solid #111827!important;border-radius:10px!important;background:#0B1220!important;box-shadow:0 14px 30px rgba(15,23,42,.18)!important;}.note-to-mp .code-section pre{padding-top:42px!important;background-color:#0B1220!important;background-image:radial-gradient(circle at 17px 15px,#FB7185 0 4px,transparent 5px),radial-gradient(circle at 33px 15px,#FBBF24 0 4px,transparent 5px),radial-gradient(circle at 49px 15px,#34D399 0 4px,transparent 5px)!important;background-repeat:no-repeat!important;}.note-to-mp .code-section code{color:#DCE7F3!important;background:transparent!important;}"
+        },
+        {
+          "id": "notebook",
+          "label": "笔记纸张",
+          "css": ".note-to-mp .code-section{padding:0!important;border:1px solid {{soft}}!important;border-radius:4px!important;background:repeating-linear-gradient(0deg,#fff 0 27px,{{pale}} 27px 28px)!important;box-shadow:5px 5px 0 {{soft}}!important;}.note-to-mp .code-section code{color:{{dark}}!important;background:transparent!important;line-height:28px!important;}"
+        },
+        {
+          "id": "ticket-code",
+          "label": "票据代码",
+          "css": ".note-to-mp .code-section{padding:0!important;border:1px dashed {{accent}}!important;border-radius:3px!important;background:{{pale}}!important;box-shadow:none!important;}.note-to-mp .code-section code{color:{{dark}}!important;background:transparent!important;}"
+        }
+      ]
+    },
+    "strong": {
+      "label": "加粗",
+      "options": [
+        {
+          "id": "theme",
+          "label": "跟随主题",
+          "css": ""
+        },
+        {
+          "id": "marker",
+          "label": "荧光笔",
+          "css": ".note-to-mp strong{padding:0 2px!important;border-radius:0!important;background:linear-gradient(transparent 60%,{{soft}} 60%)!important;color:#111827!important;}"
+        },
+        {
+          "id": "accent",
+          "label": "主色强调",
+          "css": ".note-to-mp strong{padding:0!important;background:transparent!important;color:{{accent}}!important;}"
+        },
+        {
+          "id": "soft-label",
+          "label": "浅色标签",
+          "css": ".note-to-mp strong{padding:2px 6px!important;border-radius:5px!important;background:{{pale}}!important;color:{{dark}}!important;}"
+        },
+        {
+          "id": "underline",
+          "label": "粗底线",
+          "css": ".note-to-mp strong{padding:0 1px 2px!important;border-bottom:2px solid {{accent}}!important;background:transparent!important;color:#111827!important;}"
+        },
+        {
+          "id": "dark-chip",
+          "label": "深色标签",
+          "css": ".note-to-mp strong{padding:2px 7px!important;border-radius:4px!important;background:{{dark}}!important;color:#fff!important;}"
+        },
+        {
+          "id": "outline-chip",
+          "label": "描边概念",
+          "css": ".note-to-mp strong{padding:1px 6px!important;border:1px solid {{accent}}!important;border-radius:4px!important;background:#fff!important;color:{{dark}}!important;}"
+        }
+      ]
+    },
+    "em": {
+      "label": "斜体",
+      "options": [
+        {
+          "id": "theme",
+          "label": "跟随主题",
+          "css": ""
+        },
+        {
+          "id": "accent",
+          "label": "主色斜体",
+          "css": ".note-to-mp em{padding:0!important;background:transparent!important;color:{{accent}}!important;font-style:italic!important;}"
+        },
+        {
+          "id": "serif",
+          "label": "衬线旁注",
+          "css": ".note-to-mp em{padding:0 3px!important;background:transparent!important;color:{{dark}}!important;font-family:'Songti SC',STSong,serif!important;font-style:italic!important;}"
+        },
+        {
+          "id": "soft-underline",
+          "label": "浅色下划线",
+          "css": ".note-to-mp em{padding:0 1px 2px!important;border-bottom:2px solid {{soft}}!important;background:transparent!important;color:{{dark}}!important;font-style:normal!important;}"
+        },
+        {
+          "id": "soft-pill",
+          "label": "轻柔旁注",
+          "css": ".note-to-mp em{padding:2px 7px!important;border-radius:999px!important;background:{{pale}}!important;color:{{dark}}!important;font-style:normal!important;}"
+        },
+        {
+          "id": "hand-note",
+          "label": "手记强调",
+          "css": ".note-to-mp em{padding:0 3px 2px!important;border-bottom:1px dashed {{accent}}!important;background:transparent!important;color:{{accent}}!important;font-family:'Kaiti SC',STKaiti,KaiTi,serif!important;font-style:normal!important;}"
+        }
+      ]
+    },
+    "inline-code": {
+      "label": "行内代码",
+      "options": [
+        {
+          "id": "theme",
+          "label": "跟随主题",
+          "css": ""
+        },
+        {
+          "id": "neutral-chip",
+          "label": "灰色代码片",
+          "css": ".note-to-mp p code,.note-to-mp li code,.note-to-mp td code{padding:2px 6px!important;border:1px solid #E2E8F0!important;border-radius:4px!important;background:#F1F5F9!important;color:#334155!important;box-shadow:none!important;}"
+        },
+        {
+          "id": "accent-chip",
+          "label": "主色代码片",
+          "css": ".note-to-mp p code,.note-to-mp li code,.note-to-mp td code{padding:2px 7px!important;border:none!important;border-radius:5px!important;background:{{pale}}!important;color:{{dark}}!important;box-shadow:none!important;}"
+        },
+        {
+          "id": "keyboard",
+          "label": "键帽样式",
+          "css": ".note-to-mp p code,.note-to-mp li code,.note-to-mp td code{padding:2px 7px!important;border:1px solid {{soft}}!important;border-bottom:3px solid {{accent}}!important;border-radius:5px!important;background:#fff!important;color:{{dark}}!important;box-shadow:none!important;}"
+        },
+        {
+          "id": "dark-chip",
+          "label": "深色代码片",
+          "css": ".note-to-mp p code,.note-to-mp li code,.note-to-mp td code{padding:2px 7px!important;border:none!important;border-radius:4px!important;background:{{dark}}!important;color:#fff!important;box-shadow:none!important;}"
+        }
+      ]
+    },
+    "ordered-list": {
+      "label": "有序列表",
+      "options": [
+        {
+          "id": "theme",
+          "label": "跟随主题",
+          "css": ""
+        },
+        {
+          "id": "decimal",
+          "label": "标准数字",
+          "css": ".note-to-mp ol{padding-left:28px!important;list-style-type:decimal!important;list-style-position:outside!important;background:transparent!important;}.note-to-mp ol li{margin:8px 0!important;padding:0 0 0 4px!important;border:none!important;background:transparent!important;}.note-to-mp ol li::marker{color:{{accent}}!important;font-weight:700!important;}"
+        },
+        {
+          "id": "leading-zero",
+          "label": "双位编号",
+          "css": ".note-to-mp ol{padding-left:34px!important;list-style-type:decimal-leading-zero!important;list-style-position:outside!important;background:transparent!important;}.note-to-mp ol li{margin:9px 0!important;padding:0 0 0 5px!important;border:none!important;background:transparent!important;}.note-to-mp ol li::marker{color:{{accent}}!important;font-weight:700!important;font-variant-numeric:tabular-nums!important;}"
+        },
+        {
+          "id": "roman",
+          "label": "罗马编号",
+          "css": ".note-to-mp ol{padding-left:36px!important;list-style-type:upper-roman!important;list-style-position:outside!important;background:transparent!important;}.note-to-mp ol li{margin:9px 0!important;padding:0 0 0 5px!important;border:none!important;background:transparent!important;}.note-to-mp ol li::marker{color:{{accent}}!important;font-family:Georgia,serif!important;font-weight:700!important;}"
+        },
+        {
+          "id": "number-cards",
+          "label": "编号卡片",
+          "css": ".note-to-mp ol{padding-left:0!important;list-style-position:inside!important;list-style-type:decimal!important;background:transparent!important;}.note-to-mp ol li{margin:8px 0!important;padding:10px 13px!important;border:1px solid {{soft}}!important;border-radius:8px!important;background:{{pale}}!important;}.note-to-mp ol li::marker{color:{{accent}}!important;font-weight:800!important;}"
+        },
+        {
+          "id": "rounded-number",
+          "label": "圆角编号框",
+          "css": ".note-to-mp ol{padding-left:0!important;list-style:none!important;background:transparent!important;}.note-to-mp ol li{margin:9px 0!important;padding:0!important;border:none!important;background:transparent!important;list-style:none!important;}.note-to-mp ol li .wechatpb-list-marker{display:inline-block!important;min-width:28px!important;margin:0 9px 0 0!important;padding:2px 7px!important;box-sizing:border-box!important;border:1px solid {{accent}}!important;border-radius:7px!important;background:{{pale}}!important;color:{{dark}}!important;font-size:12px!important;font-weight:750!important;line-height:1.5!important;text-align:center!important;vertical-align:middle!important;}"
+        },
+        {
+          "id": "circle-number",
+          "label": "圆形编号",
+          "css": ".note-to-mp ol{padding-left:0!important;list-style:none!important;background:transparent!important;}.note-to-mp ol li{margin:9px 0!important;padding:0!important;border:none!important;background:transparent!important;list-style:none!important;}.note-to-mp ol li .wechatpb-list-marker{display:inline-block!important;width:26px!important;height:26px!important;margin:0 9px 0 0!important;padding:0!important;box-sizing:border-box!important;border:none!important;border-radius:50%!important;background:{{accent}}!important;color:#fff!important;font-size:12px!important;font-weight:750!important;line-height:26px!important;text-align:center!important;vertical-align:middle!important;}"
+        }
+      ]
+    },
+    "unordered-list": {
+      "label": "无序列表",
+      "options": [
+        {
+          "id": "theme",
+          "label": "跟随主题",
+          "css": ""
+        },
+        {
+          "id": "solid-dot",
+          "label": "实心圆点",
+          "css": ".note-to-mp ul{padding-left:25px!important;list-style-type:disc!important;list-style-position:outside!important;background:transparent!important;}.note-to-mp ul li{margin:8px 0!important;padding:0 0 0 4px!important;border:none!important;background:transparent!important;}.note-to-mp ul li::marker{color:{{accent}}!important;}"
+        },
+        {
+          "id": "hollow-dot",
+          "label": "空心圆点",
+          "css": ".note-to-mp ul{padding-left:25px!important;list-style-type:circle!important;list-style-position:outside!important;background:transparent!important;}.note-to-mp ul li{margin:8px 0!important;padding:0 0 0 4px!important;border:none!important;background:transparent!important;}.note-to-mp ul li::marker{color:{{accent}}!important;}"
+        },
+        {
+          "id": "square",
+          "label": "方形符号",
+          "css": ".note-to-mp ul{padding-left:25px!important;list-style-type:square!important;list-style-position:outside!important;background:transparent!important;}.note-to-mp ul li{margin:8px 0!important;padding:0 0 0 4px!important;border:none!important;background:transparent!important;}.note-to-mp ul li::marker{color:{{accent}}!important;}"
+        },
+        {
+          "id": "separated",
+          "label": "细线分项",
+          "css": ".note-to-mp ul{padding-left:0!important;list-style-position:inside!important;list-style-type:disc!important;background:transparent!important;}.note-to-mp ul li{margin:0!important;padding:11px 4px!important;border:none!important;border-bottom:1px solid {{soft}}!important;background:#fff!important;}.note-to-mp ul li::marker{color:{{accent}}!important;}"
+        },
+        {
+          "id": "arrow",
+          "label": "箭头符号",
+          "css": ".note-to-mp ul{padding-left:0!important;list-style:none!important;background:transparent!important;}.note-to-mp ul li{margin:8px 0!important;padding:0!important;border:none!important;background:transparent!important;list-style:none!important;}.note-to-mp ul li .wechatpb-list-marker{display:inline-block!important;min-width:22px!important;margin:0 6px 0 0!important;color:{{accent}}!important;font-size:16px!important;font-weight:750!important;line-height:1.5!important;vertical-align:middle!important;}"
+        },
+        {
+          "id": "soft-check",
+          "label": "圆角对勾",
+          "css": ".note-to-mp ul{padding-left:0!important;list-style:none!important;background:transparent!important;}.note-to-mp ul li{margin:8px 0!important;padding:0!important;border:none!important;background:transparent!important;list-style:none!important;}.note-to-mp ul li .wechatpb-list-marker{display:inline-block!important;min-width:24px!important;margin:0 8px 0 0!important;padding:1px 6px!important;box-sizing:border-box!important;border-radius:999px!important;background:{{pale}}!important;color:{{accent}}!important;font-size:12px!important;font-weight:800!important;line-height:1.6!important;text-align:center!important;vertical-align:middle!important;}"
+        }
+      ]
+    },
+    "table": {
+      "label": "表格",
+      "options": [
+        {
+          "id": "theme",
+          "label": "跟随主题",
+          "css": ""
+        },
+        {
+          "id": "dark-header",
+          "label": "深色表头",
+          "css": ".note-to-mp table{width:100%!important;table-layout:fixed!important;border-collapse:collapse!important;border:1px solid {{soft}}!important;}.note-to-mp th,.note-to-mp td{box-sizing:border-box!important;padding:10px 12px!important;text-align:left!important;vertical-align:middle!important;white-space:normal!important;word-break:break-word!important;overflow-wrap:anywhere!important;}.note-to-mp th{border:1px solid {{dark}}!important;background:{{dark}}!important;color:#fff!important;}.note-to-mp td{border:1px solid {{soft}}!important;background:#fff!important;}"
+        },
+        {
+          "id": "accent-header",
+          "label": "主色表头",
+          "css": ".note-to-mp table{width:100%!important;table-layout:fixed!important;border-collapse:collapse!important;border:1px solid {{soft}}!important;}.note-to-mp th,.note-to-mp td{box-sizing:border-box!important;padding:10px 12px!important;text-align:left!important;vertical-align:middle!important;white-space:normal!important;word-break:break-word!important;overflow-wrap:anywhere!important;}.note-to-mp th{border:1px solid {{accent}}!important;background:{{accent}}!important;color:#fff!important;}.note-to-mp td{border:1px solid {{soft}}!important;background:#fff!important;}"
+        },
+        {
+          "id": "minimal-lines",
+          "label": "极简横线",
+          "css": ".note-to-mp table{width:100%!important;table-layout:fixed!important;border-collapse:collapse!important;border-top:2px solid {{accent}}!important;border-bottom:2px solid {{accent}}!important;}.note-to-mp th,.note-to-mp td{box-sizing:border-box!important;padding:10px 12px!important;text-align:left!important;vertical-align:middle!important;white-space:normal!important;word-break:break-word!important;overflow-wrap:anywhere!important;}.note-to-mp th{border:none!important;border-bottom:1px solid {{accent}}!important;background:#fff!important;color:{{dark}}!important;}.note-to-mp td{border:none!important;border-bottom:1px solid {{soft}}!important;background:#fff!important;}"
+        },
+        {
+          "id": "rounded",
+          "label": "圆角表格",
+          "css": ".note-to-mp table{width:100%!important;table-layout:fixed!important;border-collapse:separate!important;border-spacing:0!important;border:1px solid {{soft}}!important;border-radius:12px!important;overflow:hidden!important;}.note-to-mp th,.note-to-mp td{box-sizing:border-box!important;padding:10px 12px!important;text-align:left!important;vertical-align:middle!important;white-space:normal!important;word-break:break-word!important;overflow-wrap:anywhere!important;}.note-to-mp th{border:none!important;border-bottom:1px solid {{soft}}!important;background:{{pale}}!important;color:{{dark}}!important;}.note-to-mp td{border:none!important;border-bottom:1px solid {{soft}}!important;background:#fff!important;}.note-to-mp tr:last-child td{border-bottom:none!important;}"
+        }
+      ]
+    },
+    "divider": {
+      "label": "分隔线",
+      "options": [
+        {
+          "id": "theme",
+          "label": "跟随主题",
+          "css": ""
+        },
+        {
+          "id": "gradient",
+          "label": "渐隐细线",
+          "css": ".note-to-mp hr{height:1px!important;border:none!important;background:linear-gradient(to right,transparent,{{accent}},transparent)!important;}"
+        },
+        {
+          "id": "double",
+          "label": "编辑双线",
+          "css": ".note-to-mp hr{height:5px!important;border:none!important;border-top:1px solid {{accent}}!important;border-bottom:1px solid {{accent}}!important;background:transparent!important;}"
+        },
+        {
+          "id": "dashed",
+          "label": "票据虚线",
+          "css": ".note-to-mp hr{height:0!important;border:none!important;border-top:1px dashed {{accent}}!important;background:transparent!important;}"
+        },
+        {
+          "id": "color-block",
+          "label": "双色短线",
+          "css": ".note-to-mp hr{width:96px!important;height:5px!important;margin-left:auto!important;margin-right:auto!important;border:none!important;background:linear-gradient(90deg,{{accent}} 0 58%,{{soft}} 58% 100%)!important;}"
+        }
+      ]
+    },
+    "link": {
+      "label": "链接",
+      "options": [
+        {
+          "id": "theme",
+          "label": "跟随主题",
+          "css": ""
+        },
+        {
+          "id": "underline",
+          "label": "主色下划线",
+          "css": ".note-to-mp a{padding:0 1px 2px!important;border:none!important;border-bottom:1px solid {{accent}}!important;border-radius:0!important;background:transparent!important;color:{{accent}}!important;text-decoration:none!important;}"
+        },
+        {
+          "id": "soft-pill",
+          "label": "浅色链接",
+          "css": ".note-to-mp a{padding:2px 7px!important;border:none!important;border-radius:999px!important;background:{{pale}}!important;color:{{dark}}!important;text-decoration:none!important;}"
+        },
+        {
+          "id": "dotted",
+          "label": "点线链接",
+          "css": ".note-to-mp a{padding:0 1px 2px!important;border:none!important;border-bottom:2px dotted {{accent}}!important;border-radius:0!important;background:transparent!important;color:{{dark}}!important;text-decoration:none!important;}"
+        },
+        {
+          "id": "dark-label",
+          "label": "深色链接",
+          "css": ".note-to-mp a{padding:2px 7px!important;border:none!important;border-radius:4px!important;background:{{dark}}!important;color:#fff!important;text-decoration:none!important;}"
+        }
+      ]
+    }
+  }
+}
