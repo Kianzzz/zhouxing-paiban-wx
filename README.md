@@ -9,6 +9,7 @@
   <img src="https://img.shields.io/badge/Codex-Skill-171817?style=flat-square" alt="Codex Skill">
   <img src="https://img.shields.io/badge/内置主题-5套-01A539?style=flat-square" alt="5 套内置主题">
   <img src="https://img.shields.io/badge/可调组件-13类-7559A6?style=flat-square" alt="13 类可调组件">
+  <img src="https://img.shields.io/badge/DIY风格-浏览器保存-FF6E9D?style=flat-square" alt="DIY 风格浏览器保存">
   <img src="https://img.shields.io/badge/微信粘贴-兼容优化-1677FF?style=flat-square" alt="微信粘贴兼容优化">
 </p>
 
@@ -18,7 +19,7 @@
 
 <img src="docs/images/ui-overview.png" width="100%" alt="Zhouxing Paiban WX 完整操作界面">
 
-> 输入一篇 Markdown 或已经写好的文章，Skill 会生成可编辑的本地排版页。你可以实时换主题、换组件、调字体和间距，确认后复制富文本，直接粘贴到公众号编辑器。
+> 输入一篇 Markdown 或已经写好的文章，Skill 会生成可编辑的本地排版页。你可以实时换主题、换组件、调字体和间距，把定稿设置保存为浏览器自定义风格，再复制富文本到公众号编辑器。
 
 不安装 Skill 也可以直接打开 **[在线预览页](https://kianzzz.github.io/zhouxing-paiban-wx/)**，在示例文章上体验完整的排版设置和复制流程。
 
@@ -28,7 +29,8 @@
 |---|---|
 | **文章直接排版**<br>保留原文与标题层级，生成浏览器可打开的单文件预览页。 | **参考风格学习**<br>分析排版截图或文章链接，经确认后沉淀为可复用主题。 |
 | **完整主题系统**<br>5 套差异化主题，支持主色与界面流光联动换色。 | **局部组件设计**<br>13 类组件可分别替换，不必为了一个标题样式更换整套主题。 |
-| **文字与版面控制**<br>字体、字号、字重、段落、标题和图片间距都可实时调整。 | **公众号富文本复制**<br>输出内联样式，并针对列表、表格和视觉装饰做粘贴兼容。 |
+| **文字与版面控制**<br>字体、字号、字重、段落、标题和图片间距都可实时调整。 | **DIY 风格保存**<br>将主题、配色、字体、组件和间距保存为当前浏览器的新风格。 |
+| **在线可操作预览**<br>不安装 Skill 也可以打开 GitHub Pages 体验完整控件。 | **公众号富文本复制**<br>输出内联样式，并针对列表、表格和视觉装饰做粘贴兼容。 |
 
 ## 快速开始
 
@@ -47,7 +49,7 @@ cp -R zhouxing-paiban-wx/zhouxing-paiban-wx ~/.codex/skills/
 
 ### 3. 调整并复制
 
-在右侧设置栏选择主题、颜色和组件；确认效果后点击“复制排版”，到公众号编辑器粘贴检查。
+在右侧设置栏选择主题、颜色和组件；需要复用时点击“保存为新风格”，新风格会进入原主题下拉菜单。确认效果后点击下方通栏的“复制排版”，到公众号编辑器粘贴检查。
 
 > 其他支持 `SKILL.md` 的 Agent，也可以把仓库中的 `zhouxing-paiban-wx/` 目录复制到对应 Skills 目录。工具权限和本地页面打开方式以实际环境为准。
 
@@ -61,13 +63,21 @@ cp -R zhouxing-paiban-wx/zhouxing-paiban-wx ~/.codex/skills/
       <strong>排版设计</strong><br><br>
       分为文字设计、样式设计和排版设计。可以先选择要修改的位置，再调整字号、字重、组件结构或间距。<br><br>
       <strong>实时正文</strong><br><br>
-      左侧文章可以直接修改；工具栏与页面外壳不会进入复制结果。
+      左侧文章可以直接修改；工具栏与页面外壳不会进入复制结果。<br><br>
+      <strong>保存 DIY 风格</strong><br><br>
+      命名后保存为新风格，新风格会出现在“排版风格”菜单。只保存设计参数，不保存文章内容。
     </td>
     <td width="42%" align="center">
       <img src="docs/images/ui-style-controls.png" width="360" alt="右侧排版设置面板">
     </td>
   </tr>
 </table>
+
+### 保存自定义风格
+
+<img src="docs/images/ui-save-style.png" width="100%" alt="将当前 DIY 排版设置保存为新风格">
+
+保存内容包括基础主题、主色、字体、字号/字重、局部组件和间距，不包含文章正文、图片或链接。保存成功后可在“排版风格”中选择 `自定义 · 风格名`；同一浏览器和同一页面来源内会保留，不会跨设备自动同步。
 
 ### 可调整内容
 
@@ -148,6 +158,7 @@ cp -R zhouxing-paiban-wx/zhouxing-paiban-wx ~/.codex/skills/
 ## 兼容说明
 
 - **本地优先**：预览页默认生成在系统临时目录，不上传文章内容。
+- **自定义风格**：保存在当前浏览器的当前页面来源中；清除站点数据、更换浏览器或设备后不会自动同步。
 - **微信粘贴**：复制结果以内联样式为主，不依赖外部字体、动画或脚本。
 - **列表处理**：复制时转换为稳定的普通段落行，减少重复序号和符号错行。
 - **表格处理**：采用固定列布局与统一单元格盒模型，降低公众号中的错列概率。

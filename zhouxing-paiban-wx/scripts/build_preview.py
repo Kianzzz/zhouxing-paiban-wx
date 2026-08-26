@@ -276,7 +276,7 @@ def main() -> int:
     article_html, warnings = markdown_to_html(content, article.parent)
     if not re.sub(r"<[^>]+>", "", article_html).strip():
         parser.error("article is empty after parsing")
-    output = args.output.expanduser().resolve() if args.output else Path(tempfile.mkdtemp(prefix="zhouxing-paiban-wx-")) / "index.html"
+    output = args.output.expanduser().resolve() if args.output else Path(tempfile.gettempdir()) / "zhouxing-paiban-wx-preview" / "index.html"
     output.parent.mkdir(parents=True, exist_ok=True)
     template = TEMPLATE.read_text(encoding="utf-8")
     title_match = re.search(r"^#\s+(.+)$", strip_frontmatter(content), flags=re.M)
