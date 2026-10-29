@@ -1,0 +1,32 @@
+name: Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate themes
+        run: python3 zhouxing-paiban-wx/scripts/validate_theme.py zhouxing-paiban-wx/assets/style-library/*.json
+      - name: Theme files match rebuild_design_system.py
+        run: |
+          python3 zhouxing-paiban-wx/scripts/rebuild_design_system.py
+          git diff --exit-code -- zhouxing-paiban-wx/assets || {
+            echo "::error::主题文件与 rebuild_design_system.py 不一致，请运行该脚本后提交。"
+            exit 1
+          }
+      - name: Online demo matches preview template
+        run: |
+          python3 zhouxing-paiban-wx/scripts/build_preview.py \
+            --article zhouxing-paiban-wx/assets/sample-article.md \
+            --output docs/index.html
+          git diff --exit-code -- docs/index.html || {
+            echo "::error::docs/index.html 已过期，请按 README「维护」一节重新生成后提交。"
+            exit 1
+          }
