@@ -134,6 +134,48 @@
         box-shadow: 0 18px 55px rgba(44, 50, 46, 0.085);
         overflow: hidden;
       }
+      /* 手机预览：375px 屏宽减去公众号正文区自带的 16px 左右页边距，文章实际可用宽度 343px */
+      .paper-shell.is-phone {
+        width: 377px;
+        padding: 24px 16px;
+        border-radius: 36px;
+      }
+      .preview-mode {
+        display: flex;
+        width: max-content;
+        gap: 3px;
+        margin: 0 auto 10px;
+        padding: 3px;
+        border: 1px solid rgba(24, 27, 25, 0.09);
+        border-radius: 999px;
+        background: #fff;
+      }
+      .preview-mode-option {
+        height: 28px;
+        padding: 0 16px;
+        background: transparent;
+        color: #666b66;
+        font-size: 11px;
+        font-weight: 680;
+      }
+      .preview-mode-option:hover {
+        color: #111311;
+        background: #f6f7f5;
+      }
+      .preview-mode-option.active {
+        background: #171817;
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(23, 24, 23, 0.15);
+      }
+      .preview-mode-note {
+        margin: 0 0 14px;
+        color: #7c828b;
+        font-size: 10px;
+        text-align: center;
+      }
+      .preview-mode-note[hidden] {
+        display: none;
+      }
       .article {
         margin: 0 auto;
         outline: none;
@@ -800,6 +842,13 @@
       </div>
     </header>
     <main class="workspace">
+      <div class="preview-mode" role="group" aria-label="预览宽度">
+        <button class="preview-mode-option active" type="button" data-mode="desktop" aria-pressed="true">桌面</button
+        ><button class="preview-mode-option" type="button" data-mode="phone" aria-pressed="false">手机</button>
+      </div>
+      <p id="previewModeNote" class="preview-mode-note" hidden>
+        模拟手机公众号：屏宽 375px，已含公众号自带的 16px 页边距，复制结果不受预览宽度影响。
+      </p>
       <section class="paper-shell">
         <article id="article" class="article note-to-mp" contenteditable="true" spellcheck="false">__ARTICLE_HTML__</article>
       </section>
@@ -968,6 +1017,8 @@
           themeById = Object.fromEntries(themes.map((theme) => [theme.id, theme])),
           initialTheme = __INITIAL_THEME__;
         const article = document.getElementById("article"),
+          paperShell = document.querySelector(".paper-shell"),
+          previewModeNote = document.getElementById("previewModeNote"),
           themeStyle = document.getElementById("themeStyle"),
           themeSelect = document.getElementById("themeSelect"),
           themeNote = document.getElementById("themeNote"),
@@ -1263,6 +1314,8 @@ void main(){
           "mist-purple-story": ["#E7C9FF", "#A976FF", "#E55EFF", "#FF785B"],
         };
         const presetStorageKey = "zhouxing-paiban-wx.custom-presets.v1",
+          draftStorageKey = "zhouxing-paiban-wx.draft-settings.v1",
+          previewModeStorageKey = "zhouxing-paiban-wx.preview-mode.v1",
           maxCustomPresets = 20,
           customSelects = new Map();
         let activeTheme,
@@ -1692,10 +1745,71 @@ void main(){
           decorateHeadings();
           decorateLists();
           updateThemeSampleImage();
+          persistDraft();
           requestAnimationFrame(() => {
             syncTypeControlsFromPage();
             syncSpacingFromPage();
           });
+        }
+        // 未保存为新风格的调整也记在当前浏览器，刷新或重新生成预览后自动恢复；只存设置，不存文章内容。
+        function persistDraft() {
+          try {
+            localStorage.setItem(
+              draftStorageKey,
+              JSON.stringify({
+                initialTheme,
+                selectionId: currentThemeSelectionId,
+                accent: currentAccent,
+                font: fontSelect.value,
+                typeOverrides,
+                styleSelections,
+                spacingOverrides,
+              }),
+            );
+          } catch (error) {}
+        }
+        function loadDraft() {
+          try {
+            const draft = JSON.parse(localStorage.getItem(draftStorageKey) || "null");
+            return draft && typeof draft === "object" ? draft : null;
+          } catch (error) {
+            return null;
+          }
+        }
+        function applyDraft(draft) {
+          // 用 --theme 指定了别的主题生成预览时，以指定主题为准，不恢复上次设置。
+          if (draft.initialTheme !== initialTheme) return false;
+          const preset = customPresets.find((item) => item.id === draft.selectionId);
+          if (!preset && !themeById[draft.selectionId]) return false;
+          setTheme(draft.selectionId);
+          const safe = sanitizePreset({ ...draft, name: "draft", baseThemeId: activeTheme.id });
+          if (!safe) return false;
+          currentAccent = safe.accent;
+          typeOverrides = safe.typeOverrides;
+          Object.assign(styleSelections, safe.styleSelections);
+          spacingOverrides = safe.spacingOverrides;
+          accentColor.value = currentAccent;
+          accentHex.value = currentAccent;
+          fontSelect.value = safe.font;
+          fontNote.textContent = fontChoices.find((choice) => choice.value === fontSelect.value).note;
+          updateFlowPalette();
+          syncStyleOptions();
+          render();
+          syncAllCustomSelects();
+          return true;
+        }
+        function setPreviewMode(mode) {
+          const phone = mode === "phone";
+          paperShell.classList.toggle("is-phone", phone);
+          previewModeNote.hidden = !phone;
+          document.querySelectorAll(".preview-mode-option").forEach((option) => {
+            const active = option.dataset.mode === mode;
+            option.classList.toggle("active", active);
+            option.setAttribute("aria-pressed", String(active));
+          });
+          try {
+            localStorage.setItem(previewModeStorageKey, phone ? "phone" : "desktop");
+          } catch (error) {}
         }
         function ensureOption(select, value, label) {
           if (![...select.options].some((option) => option.value === String(value)))
@@ -2092,10 +2206,36 @@ void main(){
             list.replaceWith(section);
           });
         }
+        // 计算样式会把 margin:auto 换算成当前预览宽度下的固定像素，直接复制会让居中的图片、分隔线在手机上错位。
+        // 临时把文章换一个宽度重新测量，随宽度变化的左右外边距就是 auto，复制时还原成 auto。
+        function findAutoMargins(elements) {
+          const read = () =>
+            elements.map((element) => {
+              const computed = getComputedStyle(element);
+              return [computed.marginLeft, computed.marginRight];
+            });
+          const readAtWidth = (width) => {
+            article.style.setProperty("width", width, "important");
+            article.style.setProperty("max-width", width, "important");
+            return read();
+          };
+          const inlineStyle = article.getAttribute("style"),
+            current = read(),
+            narrow = readAtWidth("320px"),
+            wide = readAtWidth("1600px");
+          if (inlineStyle === null) article.removeAttribute("style");
+          else article.setAttribute("style", inlineStyle);
+          return current.map((margins, index) =>
+            [0, 1].map(
+              (side) => margins[side] !== narrow[index][side] || margins[side] !== wide[index][side],
+            ),
+          );
+        }
         function makeClipboardClone() {
           const clone = article.cloneNode(true),
             originals = [article, ...article.querySelectorAll("*")],
-            clones = [clone, ...clone.querySelectorAll("*")];
+            clones = [clone, ...clone.querySelectorAll("*")],
+            autoMargins = findAutoMargins(originals);
           originals.forEach((original, index) => {
             const target = clones[index],
               computed = getComputedStyle(original),
@@ -2108,6 +2248,8 @@ void main(){
               if (attr.name.startsWith("data-")) target.removeAttribute(attr.name);
             });
             applyComputedStyle(original, target, computed);
+            if (autoMargins[index][0]) target.style.setProperty("margin-left", "auto");
+            if (autoMargins[index][1]) target.style.setProperty("margin-right", "auto");
             if (["OL", "UL", "LI"].includes(original.tagName) && computed.listStyleType === "none")
               target.style.setProperty("list-style", "none", "important");
             if (clipboardMarker) {
@@ -2190,8 +2332,22 @@ void main(){
             }
           }
         });
+        document
+          .querySelectorAll(".preview-mode-option")
+          .forEach((option) => option.addEventListener("click", () => setPreviewMode(option.dataset.mode)));
         document.querySelectorAll("select").forEach(enhanceSelect);
+        const draft = loadDraft();
         setTheme(themeById[initialTheme] ? initialTheme : themes[0].id);
+        const unchanged = JSON.stringify(draft) === JSON.stringify(loadDraft());
+        if (draft && !unchanged && applyDraft(draft)) {
+          status.className = "status";
+          status.textContent = "已恢复上次的排版设置。点击“恢复当前风格”可回到风格默认值。";
+        }
+        let savedPreviewMode = "desktop";
+        try {
+          savedPreviewMode = localStorage.getItem(previewModeStorageKey) || "desktop";
+        } catch (error) {}
+        setPreviewMode(savedPreviewMode);
         initMaterialBands();
       })();
     </script>

@@ -159,7 +159,10 @@ cp -R zhouxing-paiban-wx/zhouxing-paiban-wx ~/.codex/skills/
 
 - **本地优先**：预览页默认生成在系统临时目录，不上传文章内容。
 - **自定义风格**：保存在当前浏览器的当前页面来源中；清除站点数据、更换浏览器或设备后不会自动同步。
+- **自动记住设置**：未保存为新风格的调整也会记在当前浏览器，刷新或重新生成默认预览页后自动恢复；只记设置，不记文章内容。
+- **手机预览**：文章上方可切换「桌面 / 手机」，手机模式按 375px 屏宽和公众号自带的 16px 页边距模拟正文宽度，复制结果不受预览宽度影响。
 - **微信粘贴**：复制结果以内联样式为主，不依赖外部字体、动画或脚本。
+- **居中元素**：图片、分隔线等 `margin:auto` 居中的元素复制时保留 `auto`，不会被写成桌面预览宽度下的固定像素。
 - **列表处理**：复制时转换为稳定的普通段落行，减少重复序号和符号错行。
 - **表格处理**：采用固定列布局与统一单元格盒模型，降低公众号中的错列概率。
 - **最终验收**：本地预览、复制成功、微信编辑器粘贴正常是三个独立步骤，仍需实际粘贴检查。
@@ -174,11 +177,24 @@ python3 zhouxing-paiban-wx/scripts/build_preview.py \
   --article "/absolute/path/article.md"
 ```
 
+### 维护
+
+修改 `assets/preview-template.html` 后重新生成在线体验页；修改主题定义后重新生成主题文件。GitHub Actions 会在推送时检查两者是否已同步。
+
+```bash
+python3 zhouxing-paiban-wx/scripts/rebuild_design_system.py
+python3 zhouxing-paiban-wx/scripts/build_preview.py \
+  --article zhouxing-paiban-wx/assets/sample-article.md \
+  --output docs/index.html
+```
+
 ### 仓库结构
 
 ```text
 .
 ├── README.md
+├── .github/workflows/check.yml   # 主题校验与在线页同步检查
+├── docs/index.html               # 在线体验页（由示例文章生成）
 ├── docs/images/                  # 操作界面与主题截图
 └── zhouxing-paiban-wx/
     ├── SKILL.md                  # Skill 入口
