@@ -74,7 +74,7 @@ THEMES = [
     {
         "id": "sand-gold-journal", "name": "沙金手记", "order": 4, "default": False,
         "description": "沙金手记：米黄纸张、虚线撕口、硬阴影与盖章式章节",
-        "accent": "#9A6A2F", "label": "TICKET", "width": "645px", "pad": "0 22px 42px",
+        "accent": "#9A6A2F", "label": "TICKET", "width": "677px", "pad": "0 16px 42px",
         "font": "'Songti SC',STSong,SimSun,serif", "body_color": "#594837",
         "paragraph": "margin:0 0 21px!important;font-size:16px;line-height:1.84!important;letter-spacing:.025em;text-align:justify!important;",
         "h1_meta": "margin:0 0 40px;font-size:24px;font-weight:700;line-height:1.4!important;",
@@ -93,7 +93,7 @@ THEMES = [
     {
         "id": "mist-purple-story", "name": "雾紫叙事", "order": 5, "default": False,
         "description": "雾紫叙事：窄栏衬线、大段呼吸、居中章名与大字金句",
-        "accent": "#7559A6", "label": "STORY", "width": "590px", "pad": "8px 28px 54px",
+        "accent": "#7559A6", "label": "STORY", "width": "677px", "pad": "8px 16px 54px",
         "font": "'Songti SC',STSong,SimSun,serif", "body_color": "#4C4556",
         "paragraph": "margin:0 0 30px!important;font-size:16px;line-height:2.08!important;letter-spacing:.045em;text-align:justify!important;",
         "h1_meta": "margin:0 0 64px;font-size:24px;font-weight:600;line-height:1.55!important;",
